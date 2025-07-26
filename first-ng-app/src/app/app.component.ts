@@ -16,6 +16,12 @@ import { HeaderComponent } from './components/header/header.component';
 
   // Template will be rendered inside AppComponent
   template: `
+
+    <!--
+      Interpolation refers to embedding expressions into marked up text
+        By default, interpolation uses the double curly braces {{ and }} as delimiters
+    -->
+
     <!-- <h1>Welcome to {{title}}!</h1>
     <p>Hello world!</p> -->
     <app-header />
