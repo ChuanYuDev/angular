@@ -54,5 +54,6 @@ import { HeaderComponent } from './components/header/header.component';
     `],
 })
 export class AppComponent {
+  // title is called property
   title = 'first-ng-app';
 }
