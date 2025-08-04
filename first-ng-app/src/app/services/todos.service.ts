@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Todo } from '../model/todo.type';
+import { HttpClient } from '@angular/common/http';
 
 // Injectable means this service can be injected in other places
 @Injectable({
@@ -12,21 +13,29 @@ import { Todo } from '../model/todo.type';
   providedIn: 'root'
 })
 export class TodosService {
-  todoItems: Array<Todo> = [
-    {
-      title: 'groceries',
-      id: 0,
-      userId: 1,
-      completed: false,
-    },
+  http = inject(HttpClient);
 
-    {
-      title: 'car wash',
-      id: 1,
-      userId: 1,
-      completed: false,
-    },
+  // todoItems: Array<Todo> = [
+  //   {
+  //     title: 'groceries',
+  //     id: 0,
+  //     userId: 1,
+  //     completed: false,
+  //   },
 
-  ]
+  //   {
+  //     title: 'car wash',
+  //     id: 1,
+  //     userId: 1,
+  //     completed: false,
+  //   },
+  // ]
+
+  getTodosFromApi() {
+    const url = `https://jsonplaceholder.typicode.com/todos`;
+
+    // Specify what kind of data we are returning
+    return this.http.get<Array<Todo>>(url);
+  }
   constructor() { }
 }

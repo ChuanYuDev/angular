@@ -8,8 +8,24 @@
     We can use todo unique id which is id as tracked
         Improve the performance when we're using the for loop
 -->
+<h3>Todos List</h3>
 
-@for (todo of todoItems(); track todo.id) {
-    <p>{{ todo.title }}</p>
-}
+
+
+
+<ul class="todos">
+    @for (todo of todoItems(); track todo.id) {
+        <!-- todos__item: using BEM terminology -->
+        <li class="todos__item">
+            <!--
+                id and for to bind input and label together
+                When we click the label, the input can be checked
+            -->
+            <input id="todo-{{ todo.id }}" type="checkbox" [value]="todo.completed"/>
+            <label for="todo-{{ todo.id }}">{{ todo.title }}</label>
+        </li>
+    }
+
+</ul>
+
 
