@@ -1,13 +1,12 @@
-<p>home works!</p>
-
-<!-- Pass message to GreetingComponent -->
+<!--
+    Pass message to GreetingComponent
+    We can use "Hello, world!1234" directly
+ -->
 <!-- <app-greeting message="Hello, world!1234"/> -->
 
 <!--
     If we use square bracket [] around message, the value expects the Javascript statement
-        We can use "Hello, world!1234" directly
-    
-    If we want to pass string, we should use single quotations
+        If we want to pass string, we should use single quotations
         Or we use variable like below
  -->
 <!-- <app-greeting [message]="'Hello, world!1234'"/> -->
@@ -15,5 +14,11 @@
 <!-- Pass homeMessage signal property of HomeComponent to GreetingComponent -->
 <app-greeting [message]="homeMessage()"/>
 
+<app-counter />
+
 <!-- <input type="text" (keyup)="keyUpHandler()"> -->
-<input type="text" (keyup)="keyUpHandler($event)">
+<input 
+    placeholder="Type something..."
+    type="text"
+    (keyup)="keyUpHandler($event)"
+>
