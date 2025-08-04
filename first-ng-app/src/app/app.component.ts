@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 
 // Component decorator
@@ -12,7 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
   standalone: true,
 
   // Import component
-  imports: [RouterOutlet, HomeComponent, HeaderComponent],
+  // imports: [RouterOutlet, HomeComponent, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent],
 
   // Template will be rendered inside AppComponent
   template: `
@@ -21,15 +22,15 @@ import { HeaderComponent } from './components/header/header.component';
       Interpolation refers to embedding expressions into marked up text
         By default, interpolation uses the double curly braces {{ and }} as delimiters
     -->
-
     <!-- <h1>Welcome to {{title}}!</h1>
     <p>Hello world!</p> -->
     <app-header />
     <main>
-      <app-home />
+      <!-- Use RouterOutlet to load HomeComponent-->
+      <!-- <app-home /> -->
+      <router-outlet />
     </main>
 
-    <router-outlet />
   `,
   // Specify css styles
   //    

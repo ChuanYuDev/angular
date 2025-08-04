@@ -5,6 +5,33 @@ header {
     padding-inline: 16px;
     padding-block: 8px;
     background-color: #333;
-    color: white
+    color: white;
 
+    // Nested selectors in Sass
+    nav {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // Direct child span of nav
+        > span {
+            cursor: pointer;
+            &:hover {
+                color: #777;
+            }
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                cursor: pointer;
+                &:hover {
+                    color: #777;
+                }
+            }
+        }
+    }
 }
