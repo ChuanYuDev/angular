@@ -14,3 +14,6 @@
 
 <!-- Pass homeMessage signal property of HomeComponent to GreetingComponent -->
 <app-greeting [message]="homeMessage()"/>
+
+<!-- <input type="text" (keyup)="keyUpHandler()"> -->
+<input type="text" (keyup)="keyUpHandler($event)">
