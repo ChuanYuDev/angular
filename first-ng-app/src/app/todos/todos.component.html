@@ -1,1 +1,15 @@
-<p>todos works!</p>
+<!-- Render one item -->
+<!-- <p>{{ todoItems()[0].title }}</p> -->
+
+<!-- 
+    Render all the items
+        Use Angular built-in control flow
+    
+    We can use todo unique id which is id as tracked
+        Improve the performance when we're using the for loop
+-->
+
+@for (todo of todoItems(); track todo.id) {
+    <p>{{ todo.title }}</p>
+}
+
